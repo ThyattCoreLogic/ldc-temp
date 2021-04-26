@@ -1,8 +1,9 @@
 @import 'sass/_variables';
 @import 'sass/_paging';
+@import 'sass/_ag-grid';
 
 .drawers-container {
-    height: calc(100vh - 255px);
+    height: calc(100vh - 256px);
     > .actions-drawer {
         background-color: $white;
         >.drawer-header {

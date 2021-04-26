@@ -44,7 +44,7 @@
                         <span class="sr-only">Add Violation Icon</span>
                     </span>
                 </button>
-                <button class="btn btn-outline-primary" (click)="actionsPanelOpen = !actionsPanelOpen">Action</button>
+                <button class="btn btn-outline-primary" (click)="toggleActionsPanel()">Action</button>
             </ng-container>
         </clui-page-command-area>
         <!-- / page command area component -->
@@ -104,7 +104,7 @@
                 class="sr-only">Collapse Drawer</span></a>-->
         <div class="drawer-header">
             <h2 class="text-uppercase">Action</h2>
-            <a href="javascript:" (click)="actionsPanelOpen = !actionsPanelOpen" data-action="tooltip"
+            <a href="javascript:" (click)="toggleActionsPanel()" data-action="tooltip"
                data-original-title="Close Action"
                class="close-drawer ml-auto">× <span class="sr-only">Close Action Panel</span></a>
         </div>

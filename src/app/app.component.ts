@@ -21,6 +21,9 @@ export class AppComponent implements OnInit {
                 if (url === '/') {
                     console.log('login');
                     this.renderer.addClass(document.body, 'layout-login');
+                } else if (url === '/list') {
+                    this.renderer.addClass(document.body, 'sticky-footer');
+                    this.renderer.removeClass(document.body, 'layout-login');
                 } else {
                     console.log('everything else');
                     this.renderer.removeClass(document.body, 'layout-login');

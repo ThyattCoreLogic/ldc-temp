@@ -1,7 +1,6 @@
 <!-- main nav component https://ensemble.corelogic.com/clui/navbar -->
 <app-main-nav clientName="Bright LDC" userInitials="DG"  *ngIf="router.url != '/'"></app-main-nav>
 <!-- /main nav component -->
-
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer *ngIf="router.url != '/'"></app-footer>
 

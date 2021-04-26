@@ -32,7 +32,9 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/ag-grid-community/dist/styles/ag-grid.css",
               "./node_modules/@corelogic/clui/dist/css/corelogic-ui.css",
+              "./node_modules/@corelogic/clui/dist/css/plugins/corelogic-ui-ag-grid.css",
               "src/styles.scss"
             ],
             "scripts": [

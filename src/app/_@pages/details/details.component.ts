@@ -97,6 +97,11 @@ export class DetailsComponent implements OnInit {
         this.actionsPanelOpen = true;
     }
 
+    toggleActionsPanel(): void {
+        this.actionsPanelOpen = !this.actionsPanelOpen;
+        $('[data-action="tooltip"]').tooltip('hide');
+    }
+
     ngOnInit(): void {
         $('[data-action="tooltip"]').tooltip();
     }
