@@ -369,4 +369,8 @@ export class ListComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    gotoDetails() {
+        window.location.href = '/details';
+    }
+
 }

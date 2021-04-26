@@ -3,12 +3,16 @@
         <div class="col py-5 px-5">
 
             <ag-grid-angular
-                    style="width: 100%; height: 500px;"
+                    style="width: 100%; height: 555px;"
                     class="ag-theme-ensemble"
                     [rowData]="rowData"
                     [columnDefs]="columnDefs"
                     [sideBar]="sideBar"
                     [autoGroupColumnDef]="autoGroupColumnDef"
+                    [pagination]="true"
+                    paginationPageSize="10"
+                    rowSelection="single"
+                    (selectionChanged)="gotoDetails()"
             >
             </ag-grid-angular>
 
