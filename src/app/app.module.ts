@@ -1,18 +1,29 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {EnsembleAngular} from '@corelogic/ensemble-angular';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import { MainNavComponent } from './_@shared/main-nav/main-nav.component';
+import { DetailsComponent } from './_@pages/details/details.component';
+import { LoginComponent } from './_@pages/login/login.component';
+import { FooterComponent } from './_@shared/footer/footer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        MainNavComponent,
+        DetailsComponent,
+        LoginComponent,
+        FooterComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        EnsembleAngular
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

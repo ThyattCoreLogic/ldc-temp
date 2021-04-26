@@ -1,0 +1,60 @@
+<nav class="cl-main-nav navbar navbar-dark navbar-expand-lg">
+    <a href="#" class="navbar-brand text-uppercase"><span class="navbar-logo"></span> {{clientName}}</a>
+    <div class="navbar-toggler">
+        <nav aria-labelledby="navbarMobileToggler"
+             class="nav">
+            <a id="navbarMobileToggler"
+                aria-expanded="false"
+                data-toggle="collapse"
+                href="#navbarSupportedContent"
+                class="nav-item nav-link collapsed menu-toggle">
+                <span class="fa fa-bars"><span class="sr-only">Toggle Navigation</span></span>
+            </a>
+        </nav>
+    </div>
+    <div id="navbarSupportedContent"
+         class="navbar-collapse collapse">
+        <nav class="navbar-nav">
+            <a href="javascript:" class="nav-item nav-link text-uppercase">Dashboard</a>
+            <div class="nav-divider"></div>
+            <a href="javascript:" class="nav-item nav-link text-uppercase">Account Setup</a>
+            <div class="nav-divider"></div>
+            <a href="javascript:" class="nav-item nav-link text-uppercase">Email Settings</a>
+            <div class="nav-divider"></div>
+            <a href="javascript:" class="nav-item nav-link text-uppercase">Fine Files</a>
+            <div class="nav-divider"></div>
+            <a href="javascript:" class="nav-item nav-link text-uppercase">Batch Processes</a>
+            <div class="nav-divider"></div>
+            <a href="javascript:" class="nav-item nav-link text-uppercase">Reports</a>
+        </nav>
+        <nav class="nav ml-auto">
+            <div class="nav-item">
+                <a href="#navbarSearchContainer"
+                   data-toggle="collapse"
+                   aria-controls="navbarSearchContainer"
+                   aria-expanded="false" aria-label="Toggle Search"
+                   class="nav-link align-self-center navbar-search-toggle collapse show">
+                    <span aria-hidden="true" class="fa fa-search"><span class="sr-only">Toggle Search</span></span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <div class="avatar rounded-circle bg-blue avatar-sm"><span class="monospace">{{userInitials}}</span></div>
+            </div>
+        </nav>
+    </div>
+    <div id="navbarSearchContainer" class="navbar-search-container collapse">
+        <div class="navbar-search">
+            <div class="form-group">
+                <label for="mainNavbarSearch" class="sr-only">Search</label>
+                <div class="input-group"><input type="text" id="mainNavbarSearch" placeholder="Search" value="" class="form-control"></div>
+                <a href="javascript:" class="clear-search">×<span class="sr-only">Clear Search Field</span></a>
+            </div>
+            <div class="input-group-btn">
+                <button class="btn btn-primary">Search</button>
+            </div>
+            <button href="#navbarSearchContainer" data-toggle="collapse" aria-label="Close" type="button" class="navbar-close">
+                <span aria-hidden="true" class="clear-search">×</span>
+            </button>
+        </div>
+    </div>
+</nav>

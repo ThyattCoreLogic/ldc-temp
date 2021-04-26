@@ -1,0 +1,204 @@
+<!-- secondary nav component https://ensemble.corelogic.com/clui/secondary-navbar -->
+<clui-secondary-nav>
+    <a cluiNavLink href="javascript:" [active]="true" [includeNavItem]="true">Details</a>
+    <a cluiNavLink href="javascript:" [includeNavItem]="true">Notes</a>
+    <a cluiNavLink href="javascript:" [includeNavItem]="true">Listing History</a>
+    <a cluiNavLink href="javascript:" [includeNavItem]="true">Violation History</a>
+    <a cluiNavLink href="javascript:" [includeNavItem]="true">Links</a>
+    <a cluiNavLink href="javascript:" [includeNavItem]="true">Photos</a>
+    <a cluiNavLink href="javascript:" [includeNavItem]="true">PDFs</a>
+</clui-secondary-nav>
+<!-- /secondary nav component -->
+
+<!-- drawers new https://ensemble.corelogic.com/clui/drawers-new -->
+<div class="drawers-container">
+    <div class="drawers-content">
+        <!-- page command area component https://ensemble.corelogic.com/clui/page-command-area -->
+        <clui-page-command-area>
+            <ng-container ngProjectAs="title">Listing Details</ng-container>
+            <ng-container ngProjectAs="sub-heading">
+                <span class="sub-heading-item pr-2"><strong>Listing:</strong> 3280408</span>
+                <span class="sub-heading-item">
+                    <a href="javascript:">
+                        <span class="fa fa-file"><span class="sr-only">File Icon</span></span>
+                    </a>
+                </span>
+            </ng-container>
+            <ng-container ngProjectAs="toolbox">
+                <div class="paging">
+                    <button class="btn btn-outline-primary disabled">
+                        <span class="fa fa-angle-left"><span class="sr-only">Previous Arrow</span></span>
+                    </button>
+                    <div class="pages">
+                        <div class="current-page">1</div>
+                        of
+                        <div class="total-pages">100</div>
+                    </div>
+                    <button class="btn btn-outline-primary">
+                        <span class="fa fa-angle-right"><span class="sr-only">Next Arrow</span></span>
+                    </button>
+                </div>
+                <button class="btn btn-primary btn-icon-only" data-toggle="modal" data-target="#violationsModal"
+                        data-original-title="Add Violation" data-action="tooltip">
+                    <span class="fa fa-plus" >
+                        <span class="sr-only">Add Violation Icon</span>
+                    </span>
+                </button>
+                <button class="btn btn-outline-primary" (click)="actionsPanelOpen = !actionsPanelOpen">Action</button>
+            </ng-container>
+        </clui-page-command-area>
+        <!-- / page command area component -->
+
+        <div class="container-fluid mt-4 px-5">
+            <div class="row">
+                <div class="col">
+                    <clui-section-heading type="column">
+                        Listing Information
+                    </clui-section-heading>
+
+                    <div class="row mt-3 mb-4">
+                        <div class="col">
+
+                            <div class="cl-keyvalue inline" *ngFor="let l of listingInfo1"
+                                 [class.text-red]="l.violation">
+                                <div class="cl-key">{{l.label}}</div>
+                                <div class="cl-value">{{l.value}}</div>
+                            </div>
+
+                        </div>
+                        <div class="col">
+
+                            <div class="cl-keyvalue inline" *ngFor="let l of listingInfo2"
+                                 [class.text-red]="l.violation">
+                                <div class="cl-key">{{l.label}}</div>
+                                <div class="cl-value">{{l.value}}</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <clui-section-heading type="column">
+                        Public Records
+                    </clui-section-heading>
+
+                    <div class="mt-3 mb-5">
+                        <div class="row">
+                            <div class="col"><strong>Field Name</strong></div>
+                            <div class="col"><strong>MLS Value</strong></div>
+                            <div class="col"><strong>P/R Value</strong></div>
+                        </div>
+                        <div class="row" *ngFor="let p of publicRecords">
+                            <div class="col"><strong>{{p.label}}</strong></div>
+                            <div class="col">{{p.mlsValue}}</div>
+                            <div class="col">{{p.prValue}}</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="drawer actions-drawer right" [class.open]="actionsPanelOpen">
+        <!--<a href="javascript:" class="pull-tab" (click)="actionsPanelOpen = !actionsPanelOpen"><span
+                class="sr-only">Collapse Drawer</span></a>-->
+        <div class="drawer-header">
+            <h2 class="text-uppercase">Action</h2>
+            <a href="javascript:" (click)="actionsPanelOpen = !actionsPanelOpen" data-action="tooltip"
+               data-original-title="Close Action"
+               class="close-drawer ml-auto">× <span class="sr-only">Close Action Panel</span></a>
+        </div>
+        <div class=" scroll-actions-drawer">
+
+            <div class="violation-container mx-3 my-3" *ngFor="let v of violations">
+                <div class="violation-doc">
+                    <a href="javascript:">
+                        <span class="fa fa-file"><span class="sr-only">Violation Doc Icon</span></span>
+                    </a>
+                </div>
+
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">Violation</div>
+                    <div class="cl-value">{{v.violation}}</div>
+                </div>
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">Violation ID</div>
+                    <div class="cl-value">{{v.violationId}}</div>
+                </div>
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">Detected By</div>
+                    <div class="cl-value">{{v.detectedBy}}</div>
+                </div>
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">Agent</div>
+                    <div class="cl-value">{{v.agent}}</div>
+                </div>
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">Agent Id</div>
+                    <div class="cl-value">{{v.agentId}}</div>
+                </div>
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">State</div>
+                    <div class="cl-value">{{v.state}}</div>
+                </div>
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">Fine Amount</div>
+                    <div class="cl-value">{{v.fineAmount}}</div>
+                </div>
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">Fine Date</div>
+                    <div class="cl-value">{{v.fineDate}}</div>
+                </div>
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">Fine Code</div>
+                    <div class="cl-value">{{v.fineCode}}</div>
+                </div>
+                <div class="cl-keyvalue inline">
+                    <div class="cl-key">Grace Date</div>
+                    <div class="cl-value">{{v.graceDate}}</div>
+                </div>
+
+                <div class="py-3">
+                    <select class="form-control">
+                        <option>Select Action</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-center pt-3">
+                <button type="button" class="btn btn-sm btn-default" tabindex="0">Update & Next</button>
+                <button type="button" class="btn btn-sm btn-primary" tabindex="0">Update</button>
+            </div>
+            <div class="d-flex justify-content-center pt-2 pb-5">
+                <button type="button" class="btn btn-sm btn-outline-default" tabindex="0">reset</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- /drawers new -->
+
+
+<!-- modals https://ensemble.corelogic.com/clui/modal -->
+<div aria-label="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true"
+     id="violationsModal" class="modal fade">
+    <div role="document" class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalLabel" class="modal-title">Add Violation</h3>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>This is what it do</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                <button type="button" class="btn btn-primary">Save</button></div>
+        </div>
+    </div>
+</div>
+<!-- /modals -->

@@ -1,0 +1,54 @@
+
+.paging {
+    display: flex;
+    margin-right: 12px;
+
+    > .btn {
+        box-shadow: none;
+        color: $black;
+        font-size: 18px;
+        &.disabled {
+            background-color: $white;
+            background-image: none;
+        }
+        &:hover {
+            color: $white;
+        }
+        &:first-child {
+            border-right: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding-left: 12px;
+            padding-right: 14px;
+        }
+
+        &:last-child {
+            border-left: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-left: 0;
+            padding-right: 12px;
+            padding-left: 14px;
+        }
+    }
+    > .pages {
+        background-color: white;
+        border-top: 1px solid $primary;
+        border-bottom: 1px solid $primary;
+        color: $cl-black;
+        // box-shadow: 0 0 4px 1px rgb(0 0 0 / 25%);
+        align-items: center;
+        display: inline-flex;
+        font-family: "opensans-semibold", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        letter-spacing: -0.03em;
+        margin: 0;
+        padding-left: 8px;
+        padding-right: 8px;
+        > .current-page {
+            margin-right: 4px;
+        }
+        > .total-pages {
+            margin-left: 4px;
+        }
+    }
+}

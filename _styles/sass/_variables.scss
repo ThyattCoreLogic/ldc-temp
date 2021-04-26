@@ -1,0 +1,76 @@
+// ============================================================================
+// The following color variables are from the CoreLogic 2020 rebrand initiative
+// ============================================================================
+
+// CORPORATE COLORS
+$cl-red: #e10600;
+$cl-red-dark: #b11e2b;
+$cl-orange: #f7941d;
+$cl-orange-dark: #f15a29;
+$cl-blue-adj: #257bb1;
+$cl-blue: $cl-blue-adj;
+$cl-blue-dark: #0d395d;
+$cl-green: $cl-blue;
+
+// NEUTRAL COLORS
+$cl-blackest: #000000;
+$cl-gray-dark: #5a5a5a;
+$cl-gray-medium: #828282;
+$cl-gray-light: #aaaaaa;
+$cl-gray-white: #e6e6e6;
+$cl-gray-white-light: #efefef;
+$cl-white: #ffffff;
+
+// ALERT COLORS
+$cl-green-success: #34836e;
+$cl-success: $cl-green-success;
+$cl-warning: $cl-orange;
+$cl-info: $cl-blue-dark;
+$cl-danger: $cl-red-dark;
+
+// MISC.
+$cl-copy: #404040;
+$cl-default: $cl-gray-white;
+$cl-dark: $cl-copy;
+$cl-light: $cl-gray-white;
+$cl-btn-dark: $cl-blue-dark;
+
+// ADDITIONS/DEVIATIONS FOR ACCESSIBILITY
+$cl-link-disabled-dark: #c6c6c6;
+$cl-link-disabled-light: #767676;
+$cl-disabled-bg: $cl-gray-white;
+$cl-disabled-copy: $cl-gray-medium;
+$cl-transparent: rgba(0, 0, 0, 0);
+
+// =========================================================================
+// The following variables map the previously used variables to the new
+// 2020 rebrand variable names and are here in case your project needs them.
+// =========================================================================
+// DEFAULTS
+$black: $cl-blackest;
+$clBlack: $cl-copy;
+$cl-black: $cl-copy;
+$white: $cl-white;
+$transparent: $cl-transparent;
+// THEME COLORS
+$valencia: $cl-red;
+$cerulean: $cl-blue;
+$shamrock: $cl-blue;
+$amethyst: $cl-orange;
+// GRAYS
+$gallery: #ebebeb;
+$seashell: $cl-gray-white;
+$alto: $cl-gray-light;
+$gray: $cl-gray-medium;
+$dark-gray: $cl-gray-dark;
+// COLOR MESSAGES
+$success: $cl-success;
+$warning: $cl-warning;
+$info: $cl-info;
+$danger: $cl-danger;
+// BOOTSTRAP OVERRIDES
+$primary: $cl-blue-adj;
+$secondary: $cl-default;
+$light: $cl-light;
+$dark: $cl-dark;
+$link: $cl-blue;

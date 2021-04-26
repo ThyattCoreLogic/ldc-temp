@@ -1,0 +1,42 @@
+@import 'sass/_variables';
+@import 'sass/_paging';
+
+.drawers-container {
+    height: calc(100vh - 255px);
+    > .actions-drawer {
+        background-color: $white;
+        >.drawer-header {
+            display: flex;
+            background-color: $primary;
+            h2 {
+                color: $white;
+            }
+            >.close-drawer {
+                font-size: 30px;
+                color: $white;
+                font-family: "opensans-light", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                &:hover {
+                    color: $cl-gray-light;
+                }
+            }
+        }
+        > .scroll-actions-drawer {
+            overflow-y: auto;
+            .cl-keyvalue {
+                font-size: 14px;
+                .cl-key {
+                    font-size: 14px;
+                }
+            }
+            .violation-container {
+                border-bottom: 1px solid $cl-gray-white;
+                position: relative;
+                > .violation-doc {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+
+    }
+}
