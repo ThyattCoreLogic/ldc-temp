@@ -2,26 +2,22 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
-## Development server
+## Local Server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+CD ldc-temp
+npm install
+ng serve
+http://localhost:4200
+```
+## Login Screenshoot
+<img width="1867" alt="LDC Login" src="https://user-images.githubusercontent.com/23463408/116296870-5209b900-a760-11eb-875b-c0d4bb2bfd46.png">
 
-## Code scaffolding
+## List
+<img width="1867" alt="LDC List" src="https://user-images.githubusercontent.com/23463408/116296875-546c1300-a760-11eb-92b8-e8cd6c919ff0.png">
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Detail
+<img width="1867" alt="LDC Detail" src="https://user-images.githubusercontent.com/23463408/116296884-5635d680-a760-11eb-8bf4-4f275b42521f.png">
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
