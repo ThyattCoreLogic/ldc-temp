@@ -13,8 +13,8 @@
         </div>
     </div>
 </div>
-<div class="login-bg gradient-blue-bg" style="background-image: url('images/laptop-photo.jpg');">
-    <div class="container">
+<div class="login-bg gradient-blue-bg" style="background-image: url('assets/laptop-photo.jpg');min-height: 670px;">
+    <div class="container align-self-start">
         <div class="row no-gutters pl-3">
             <div class="order-last order-md-first col-sm-12 col-md-5 d-flex flex-column">
                 <div class="form-group">
@@ -28,7 +28,7 @@
                     <input type="password" id="passwordText" class="form-control" placeholder="" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
                 </div>
 
-                <div role="alert" class="alert alert-danger">
+                <div role="alert" class="alert alert-danger" [hidden]="true">
                     Your <strong>User ID</strong> and/or <strong>Password</strong> do not match our records
                 </div>
 
@@ -37,30 +37,31 @@
                     Need Help? Call our toll free number at <a href="" class="text-gallery">(866) 781-8321</a>
                     or send us an <a href="" class="text-gallery">email</a>.
                 </p>
-                <div class="mt-auto">
+
+                <div class="mt-auto" [hidden]="true">
                     <hr class="bg-gallery my-4">
                     <p class="text-gallery text-center mb-2">
                         New to Image Analytics?
                     </p>
                     <button class="btn btn-outline-primary btn-block text-uppercase">Create Account</button>
                 </div>
+
             </div>
             <div class="order-first order-md-last col-sm-12 col-md-5 offset-sm-0 offset-md-2 d-flex flex-column pb-sm-4 pb-md-0">
-                <h3 class="text-white">Lorem Et Ipsum</h3>
-                <h1 class="text-white mt-2 mb-3">Image Analytics</h1>
+                <h1 class="text-white mt-2 mb-3">Listing Data Checker</h1>
                 <p>Vivamus vitae massa purus. Phasellus consectetur neque
                     elit, eu rhoncus magna varius vehicula. Vestibulum mollis
                     iaculis justo, ut finibus ipsum. Duis enim velit, elementum
                     vehicula malesuada sit amet, maximus quis tortor. Duis
                     tristique vulputate orci eu congue.</p>
-                <div class="mt-auto">
+
+               <!-- <div class="mt-auto">
                     <hr class="bg-gallery my-4">
                     <div class="d-flex flex-row">
                         <div class="clgx-icon-warning icon-block"></div>
                         <p>The system is currently undergoing upgrades! <br>Please check back for something new.</p>
                     </div>
-
-                </div>
+                </div>-->
 
             </div>
         </div>

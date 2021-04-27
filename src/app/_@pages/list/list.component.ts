@@ -1,65 +1,61 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {GridApi, GridOptions, GridReadyEvent} from 'ag-grid-community';
 
 @Component({
     selector: 'app-list',
     templateUrl: './list.component.html',
     styles: []
 })
-export class ListComponent implements OnInit {
-
-    autoGroupColumnDef = {
-        resizable: true,
-        cellRendererParams: {
-            checkbox: true
-        }
+export class ListComponent implements OnInit, OnDestroy {
+    gridApi: any;
+    gridColumnApi: any;
+    public gridOptions: GridOptions = {
+        defaultColDef: {
+            flex: 1,
+            minWidth: 100,
+            enableValue: true,
+            enableRowGroup: true,
+            enablePivot: true,
+            sortable: true,
+            filter: true,
+        },
+        pagination: true,
+        paginationPageSize: 10,
+        rowSelection: 'single',
+        domLayout: 'autoHeight',
+        rowGroupPanelShow: 'always',
+        pivotPanelShow: 'always',
+        sideBar: true,
     };
-    sideBar = {
-        toolPanels: [
-            {
-                id: 'columns',
-                labelDefault: 'Columns',
-                labelKey: 'columns',
-                iconKey: 'columns',
-                toolPanel: 'agColumnsToolPanel',
-            },
-            {
-                id: 'filters',
-                labelDefault: 'Filters',
-                labelKey: 'filters',
-                iconKey: 'filter',
-                toolPanel: 'agFiltersToolPanel',
-            }
-        ],
-        defaultToolPanel: null
-    };
+    private resizeListenerFunc = () => { this.gridApi.sizeColumnsToFit(); };
 
     public columnDefs = [
         {
             headerName: 'Activity Summary',
             children: [
-                { headerName: '', field: 'selected', checkboxSelection: true, width: 50, suppressSizeToFit: false },
-                { headerName: 'Violation State', field: 'violation_state', sortable: true, width: 180, suppressSizeToFit: false},
-                { headerName: '1 Day', field: 'summary_1_day', sortable: true, width: 80, suppressSizeToFit: false},
-                { headerName: '7 Days', field: 'summary_7_day', sortable: true, width: 80, suppressSizeToFit: false},
-                { headerName: '30 Days', field: 'summary_30_day', sortable: true, width: 90, suppressSizeToFit: false},
+                { headerName: '', field: 'selected', checkboxSelection: true, resizeable: false, minWidth: 50, maxWidth: 50 },
+                { headerName: 'Violation State', field: 'violation_state', resizeable: false, minWidth: 180},
+                { headerName: '1 Day', field: 'summary_1_day', resizeable: false, minWidth: 90, maxWidth: 90},
+                { headerName: '7 Days', field: 'summary_7_day', resizeable: false, minWidth: 90, maxWidth: 90},
+                { headerName: '30 Days', field: 'summary_30_day', resizeable: false, minWidth: 100, maxWidth: 100},
             ]
         },
         {
             headerName: 'Violation Summary - 411',
             children: [
-                { headerName: 'State', field: 'state', sortable: true, width: 100, suppressSizeToFit: false},
-                { headerName: 'Listing #', field: 'listing_num', sortable: true, width: 100, suppressSizeToFit: false},
-                { headerName: 'Status', field: 'status', sortable: true, width: 100, suppressSizeToFit: false},
-                { headerName: 'Violation #', field: 'violation_num', sortable: true, width: 120, suppressSizeToFit: false},
-                { headerName: 'Agent', field: 'agent', sortable: true, width: 200, suppressSizeToFit: false},
-                { headerName: 'Office', field: 'office', sortable: true, width: 200, suppressSizeToFit: false},
-                { headerName: 'Violation Name', field: 'violation_name', sortable: true, width: 200, suppressSizeToFit: false},
-                { headerName: 'Date', field: 'date', sortable: true, width: 100, suppressSizeToFit: false},
-                { headerName: 'Modified Date', field: 'modified_date', sortable: true, width: 100, suppressSizeToFit: false},
+                { headerName: 'State', field: 'state', maxWidth: 150, minWidth: 150},
+                { headerName: 'Listing #', field: 'listing_num'},
+                { headerName: 'Status', field: 'status', maxWidth: 150, minWidth: 150},
+                { headerName: 'Violation #', field: 'violation_num', maxWidth: 150, minWidth: 150},
+                { headerName: 'Agent', field: 'agent'},
+                { headerName: 'Office', field: 'office'},
+                { headerName: 'Violation Name', field: 'violation_name'},
+                { headerName: 'Date', field: 'date', maxWidth: 130, minWidth: 130},
+                { headerName: 'Modified Date', field: 'modified_date', maxWidth: 130, minWidth: 130},
             ]
         },
-    ];
 
+    ];
     public rowData = [
         {
             violation_state: 'Detected',
@@ -363,7 +359,19 @@ export class ListComponent implements OnInit {
         }
     ];
 
+    onGridReady(params: GridReadyEvent): void {
+        this.gridApi = params.api;
+        this.gridColumnApi = params.columnApi;
+        this.gridApi.sizeColumnsToFit();
+        window.addEventListener('resize', this.resizeListenerFunc);
+    }
+
+    ngOnDestroy(): void {
+       window.removeEventListener('resize', this.resizeListenerFunc);
+    }
+
     constructor() {
+
     }
 
     ngOnInit(): void {
