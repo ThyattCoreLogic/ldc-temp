@@ -4,12 +4,13 @@
 
             <ag-grid-angular
                     #myAgGrid
-                    style="width: 100%; height: 555px;"
+                    style="width: 100%; height: 100%;"
                     class="ag-theme-ensemble"
                     [gridOptions]="gridOptions"
                     [rowData]="rowData"
                     [columnDefs]="columnDefs"
                     (gridReady)="onGridReady($event)"
+                    (rowSelected)="onRowSelected($event)"
             >
             </ag-grid-angular>
 

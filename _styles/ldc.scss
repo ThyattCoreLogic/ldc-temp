@@ -4,8 +4,17 @@
 
 .drawers-container {
     height: calc(100vh - 256px);
+    .animate-me {
+        transition: all 5ms ease-in-out;
+        font-size: 18px;
+    }
     > .actions-drawer {
         background-color: $white;
+        width: 390px;
+        flex: 0 0 390px;
+        &.right {
+            margin-right: -390px;
+        }
         >.drawer-header {
             display: flex;
             background-color: $primary;

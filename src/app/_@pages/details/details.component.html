@@ -19,7 +19,7 @@
             <ng-container ngProjectAs="sub-heading">
                 <span class="sub-heading-item pr-2"><strong>Listing:</strong> 3280408</span>
                 <span class="sub-heading-item">
-                    <a href="javascript:">
+                    <a href="javascript:" routerLink="/list">
                         <span class="fa fa-file"><span class="sr-only">File Icon</span></span>
                     </a>
                 </span>
@@ -44,7 +44,10 @@
                         <span class="sr-only">Add Violation Icon</span>
                     </span>
                 </button>
-                <button class="btn btn-outline-primary" (click)="toggleActionsPanel()">Action</button>
+                <button class="btn btn-outline-primary" (click)="toggleActionsPanel()">
+                    Action
+                    <span class="fa fa-angle-right ml-2 animate-me" [class.fa-rotate-180]="!actionsPanelOpen"></span>
+                </button>
             </ng-container>
         </clui-page-command-area>
         <!-- / page command area component -->

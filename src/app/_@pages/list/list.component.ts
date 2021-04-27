@@ -11,8 +11,6 @@ export class ListComponent implements OnInit, OnDestroy {
     gridColumnApi: any;
     public gridOptions: GridOptions = {
         defaultColDef: {
-            flex: 1,
-            minWidth: 100,
             enableValue: true,
             enableRowGroup: true,
             enablePivot: true,
@@ -23,8 +21,6 @@ export class ListComponent implements OnInit, OnDestroy {
         paginationPageSize: 10,
         rowSelection: 'single',
         domLayout: 'autoHeight',
-        rowGroupPanelShow: 'always',
-        pivotPanelShow: 'always',
         sideBar: true,
     };
     private resizeListenerFunc = () => { this.gridApi.sizeColumnsToFit(); };
@@ -366,6 +362,10 @@ export class ListComponent implements OnInit, OnDestroy {
         window.addEventListener('resize', this.resizeListenerFunc);
     }
 
+    onRowSelected(event: any): void {
+        window.location.href = '/details';
+    }
+
     ngOnDestroy(): void {
        window.removeEventListener('resize', this.resizeListenerFunc);
     }
@@ -377,8 +377,5 @@ export class ListComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
     }
 
-    gotoDetails() {
-        window.location.href = '/details';
-    }
 
 }
